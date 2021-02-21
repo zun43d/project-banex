@@ -1,0 +1,195 @@
+:root {
+	--primary: #fbdd11;
+	--primary-grey: #28292c;
+	--grey: #222121;
+	--note-color: #343537;
+	--input-color: #444649;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+	font-family: Siyam Rupali;
+	src: url(../fonts/Siyamrupali.ttf);
+}
+
+/* Global */
+
+body {
+	box-sizing: border-box;
+	background: url('../images/background-ban.svg') no-repeat center fixed;
+	background-size: 100% auto;
+	font-family: 'Poppins', sans-serif;
+	/* ----------------------------------this is where viewport gets fixed-------------------------------- */
+	height: 100vh;
+	overflow: hidden;
+	/* --------------------------------------------------------------------------------------------------- */
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+a {
+	display: flex;
+	font-size: 0.95rem;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h4 {
+	font-weight: 600;
+	color: white;
+	font-size: 1.5rem;
+}
+
+button {
+	background-color: var(--primary) !important;
+	border: none !important;
+	font-weight: 900;
+	color: var(--primary-grey) !important;
+	width: 200px;
+}
+
+button:hover {
+	color: var(--primary) !important;
+	background-color: transparent !important;
+	border: 1px solid var(--primary) !important;
+}
+
+input {
+	background-color: var(--input-color);
+	display: block;
+	margin: 15px auto;
+	padding: 0 10px;
+	border: 1px solid var(--input-color);
+	width: 420px;
+	height: 40px;
+	border-radius: 20px;
+	outline: none;
+	color: white;
+}
+
+input:focus {
+	border: 1px solid gray;
+}
+
+/* header */
+
+#header {
+	background-color: var(--primary);
+	height: 12vh;
+	display: flex;
+}
+
+#header .wrapper {
+	width: 90vw;
+	margin: auto;
+	display: flex;
+	align-items: center !important;
+	justify-content: space-between;
+}
+
+#header a img {
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	width: 150px;
+}
+
+/* Notce */
+
+#notice {
+	background-color: var(--grey);
+	font-size: 0.9rem;
+	font-weight: 400;
+	text-align: center;
+	color: white;
+	padding: 9px 0;
+}
+
+/* Main */
+
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 82vh;
+}
+
+.card__inside {
+	text-align: center;
+	width: 420px;
+	margin: -10px auto auto auto;
+}
+
+/* Main__Deposit */
+
+.stepcount {
+	background-color: var(--primary);
+	display: inline-block;
+	padding: 10px 25px;
+	border-radius: 50%;
+	font-weight: 800;
+	font-family: 'Poppins', sans-serif;
+	color: black;
+	font-size: 2rem;
+	margin: -20px;
+}
+
+.main__child {
+	width: 550px;
+	height: 450px;
+	border-radius: 20px;
+	background-color: var(--primary-grey);
+}
+
+.depo__address {
+	margin: auto;
+	width: 350px;
+	height: 80px;
+	background-color: var(--note-color);
+	color: white;
+	font-weight: 300;
+	font-size: 0.9rem;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin: 10px auto;
+	border-radius: 25px;
+	overflow-wrap: break-word;
+}
+
+.depo__address span {
+	color: var(--primary);
+}
+
+.depo__qr {
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+/* Main__Submit */
+
+.alert-note {
+	width: 420px;
+	height: 70px;
+	background-color: var(--note-color);
+	color: white;
+	margin: auto;
+	border-radius: 20px;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 18px auto;
+	font-size: 0.9rem;
+}
