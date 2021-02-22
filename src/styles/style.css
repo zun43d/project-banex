@@ -4,14 +4,10 @@
 	--grey: #222121;
 	--note-color: #343537;
 	--input-color: #444649;
+	--font: 'Poppins', sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-@font-face {
-	font-family: Siyam Rupali;
-	src: url(../fonts/Siyamrupali.ttf);
-}
 
 /* Global */
 
@@ -19,15 +15,15 @@ body {
 	box-sizing: border-box;
 	background: url('../images/background-ban.svg') no-repeat center fixed;
 	background-size: 100% auto;
-	font-family: 'Poppins', sans-serif;
+	font-family: var(--font);
 	/* ----------------------------------this is where viewport gets fixed-------------------------------- */
 	height: 100vh;
-	overflow: hidden;
+	/* overflow: hidden; */
 	/* --------------------------------------------------------------------------------------------------- */
 }
 
 body::-webkit-scrollbar {
-	display: none;
+	/* display: none; */
 }
 
 a {
@@ -45,15 +41,30 @@ h4 {
 	font-size: 1.5rem;
 }
 
-button {
+select {
+	display: block !important;
+	width: 200% !important;
+	background-color: var(--input-color) !important;
+	color: #818181 !important;
+	border: 1px solid var(--input-color) !important;
+}
+
+.select {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.button-p {
 	background-color: var(--primary) !important;
 	border: none !important;
 	font-weight: 900;
 	color: var(--primary-grey) !important;
 	width: 200px;
+	transition: 0.1s all;
+	outline-color: #fbdc1186 !important;
 }
 
-button:hover {
+.button-p:hover {
 	color: var(--primary) !important;
 	background-color: transparent !important;
 	border: 1px solid var(--primary) !important;
@@ -65,8 +76,9 @@ input {
 	margin: 15px auto;
 	padding: 0 10px;
 	border: 1px solid var(--input-color);
-	width: 420px;
-	height: 40px;
+	width: 100%;
+	height: 42px;
+	font-size: 1rem;
 	border-radius: 20px;
 	outline: none;
 	color: white;
@@ -124,30 +136,35 @@ input:focus {
 
 .card__inside {
 	text-align: center;
-	width: 420px;
-	margin: -10px auto auto auto;
-}
-
-/* Main__Deposit */
-
-.stepcount {
-	background-color: var(--primary);
-	display: inline-block;
-	padding: 10px 25px;
-	border-radius: 50%;
-	font-weight: 800;
-	font-family: 'Poppins', sans-serif;
-	color: black;
-	font-size: 2rem;
-	margin: -20px;
+	width: 75%;
+	margin: 15px auto auto auto;
+	align-items: center;
 }
 
 .main__child {
-	width: 550px;
-	height: 450px;
+	height: 70vh;
 	border-radius: 20px;
 	background-color: var(--primary-grey);
 }
+
+.stepcount {
+	background-color: var(--primary);
+	/* display: inline-block; */
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	font-weight: 800;
+	font-family: var(--font);
+	color: black;
+	font-size: 2rem;
+	margin: -30px;
+}
+
+/* Main__Deposit */
 
 .depo__address {
 	margin: auto;
@@ -178,6 +195,17 @@ input:focus {
 	-ms-user-select: none;
 }
 
+button.copied {
+	background-color: #4cbf4b !important;
+	border: 1px solid #4cbf4b !important;
+}
+
+button.copied:hover {
+	color: var(--primary-grey) !important;
+	background-color: #389636 !important;
+	border: 1px solid #389636 !important;
+}
+
 /* Main__Submit */
 
 .alert-note {
@@ -187,9 +215,149 @@ input:focus {
 	color: white;
 	margin: auto;
 	border-radius: 20px;
-	padding-top: 15px;
 	padding-left: 10px;
 	padding-right: 10px;
-	margin: 18px auto;
+	margin: 8px auto;
 	font-size: 0.9rem;
+}
+
+.error-input {
+	border-color: red !important;
+}
+
+/* Modal */
+
+.modal-card-head,
+.modal-card-body,
+.modal-card-foot {
+	background-color: var(--primary-grey) !important;
+	border-color: var(--input-color);
+}
+
+.is-success {
+	background-color: #4cbf4b !important;
+	color: var(--primary-grey) !important;
+	font-weight: 600;
+}
+
+.is-success:hover {
+	background-color: #389636 !important;
+	color: var(--primary-grey) !important;
+}
+
+.is-normal {
+	background-color: rgb(189, 189, 189) !important;
+	font-weight: 600;
+	color: var(--primary-grey) !important;
+}
+
+.is-normal:hover {
+	background-color: rgb(170, 170, 170) !important;
+	color: var(--primary-grey) !important;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 600px) {
+	body {
+		height: auto;
+		background-size: auto 100%;
+		background-repeat: repeat;
+		/* overflow: scroll; */
+	}
+	h4 {
+		font-size: 1.1rem;
+	}
+	.main {
+		flex-direction: column;
+		height: auto;
+		margin-top: 20px;
+	}
+	.main__child {
+		margin: 20px auto;
+		width: 80vw;
+	}
+	.depo__address {
+		width: 60vw;
+		font-size: 0.9rem;
+	}
+	.stepcount {
+		width: 70px;
+		height: 70px;
+		font-size: 1.3rem;
+		margin: -20px;
+	}
+	.alert-note {
+		width: 60vw;
+		height: 80px;
+		font-size: 0.9rem;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	h4 {
+		font-size: 1.3rem;
+	}
+	.depo__address {
+		font-size: 1rem;
+		padding-top: 15px;
+	}
+	.alert-note {
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	body {
+		background-size: 100% auto;
+		height: auto;
+		background-repeat: repeat-y;
+	}
+	.main {
+		flex-direction: row;
+		height: 80vh;
+	}
+	.main__child {
+		width: 43vw;
+	}
+	.depo__address {
+		/* font-size: 0.9rem; */
+		width: 350px;
+	}
+	.alert-note {
+		width: 350px;
+		font-size: 0.9rem;
+		padding-top: 10px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.alert-note {
+		width: 420px;
+		padding-top: 15px !important;
+		font-size: 1rem;
+		padding-top: 10px;
+	}
+	.stepcount {
+		font-size: 1.7rem;
+		width: 80px;
+		height: 80px;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.card__inside {
+		transform: scale(1.11);
+		margin-top: 50px;
+	}
+	h4 {
+		font-size: 1.5rem;
+		margin: 20px auto;
+	}
+	input,
+	select,
+	button,
+	a {
+		transform: scale(1.05);
+	}
 }
