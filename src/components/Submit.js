@@ -31,7 +31,10 @@ const Submit = () => {
 		e.preventDefault();
 		if (banAddr.current.value.length !== 64) {
 			errorInput(banAddr);
-		} else if (amount.current.value < '1000') {
+		} else if (
+			amount.current.value < '1000' &&
+			amount.current.value > '30000'
+		) {
 			errorInput(amount);
 		} else if (phone.current.value.length !== 11) {
 			errorInput(phone);
@@ -99,9 +102,11 @@ const Submit = () => {
 							<input
 								// onChange={amntX}
 								ref={amount}
-								type="text"
+								type="number"
 								placeholder="কতো বানানো পাঠিয়েছেন তা নিচে লিখুনঃ"
 								id="form__amount"
+								min="4"
+								max="5"
 								autoComplete="off"
 							/>
 						</div>
@@ -117,8 +122,8 @@ const Submit = () => {
 						<div className="select is-warning is-rounded">
 							<select ref={reffer}>
 								<option>যার মাধ্যমে এসেছেন তার নাম বাছাই করুন</option>
-								<option>Ibtisam Jimmy</option>
-								<option>Shaiyan</option>
+								<option value="Jim">Ibtisam Jimmy</option>
+								<option value="Shaiyan">Shaiyan</option>
 							</select>
 						</div>
 						<button
@@ -145,10 +150,20 @@ const Submit = () => {
 						></div>
 					</header>
 					<section className="modal-card-body">
-						দফাজসদিওয়াহে দফহা হুএহফুই হফিয়া হফু হফ এফ গাহসেফগ স্ফ ব্দব চভব আসা
-						সদাওেঝা এওউফাসেফ উয়াসেফ্যাএফ্যাসেফ্যহাধসুয়াদা এহ ফু শেফ এহফা ফ ফহফহ
-						আফহা ফহাএ ফ ফ ফহফ ফহ আহেফাহ ফুহেহফুহসেফ আস্ফ সেফ উএহ ফ হসুএ হফুয়াশেফ
-						শেফ হাসেহ ফেহফ শেফুসাহফুসেফহুস সুইহ ইহ এইউফহ সেফু
+						<h4>
+							<strong className="has-text-white">মনে রাখবেনঃ</strong>
+						</h4>
+						<br />
+						<p>
+							আপনি সেল করার পর সর্বোচ্চ ২৪ ঘন্টা লাগতে পারে আপনার বিকাশ
+							অ্যাকাউন্ট এ টাকা পৌছাতে। কারন আমরা প্রতি ২৪ ঘন্টায় একবার সব
+							বানানো সেল করে থাকি। তাই আপনার বানানো সেল করে বিকাশ এ টাকা পাঠাতে
+							একটু সময় লেগে যায়। আমরা চেষ্টা করি যত তারাতারি সম্ভব আপনার কাছে
+							টাকা পৌঁছে দেওয়ার।
+							<br />
+							<br />
+							আশা করছি আমাদের যথাসম্ভব সময় দিয়ে সাহায্য করবেন।
+						</p>
 					</section>
 					<footer className="modal-card-foot">
 						<button

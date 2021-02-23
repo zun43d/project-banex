@@ -22,10 +22,6 @@ body {
 	/* --------------------------------------------------------------------------------------------------- */
 }
 
-body::-webkit-scrollbar {
-	/* display: none; */
-}
-
 a {
 	display: flex;
 	font-size: 0.95rem;
@@ -132,6 +128,21 @@ input:focus {
 	padding: 9px 0;
 }
 
+#legal-notice {
+	position: fixed;
+	bottom: 0;
+	background-color: var(--grey);
+	font-size: 0.9rem;
+	font-weight: 400;
+	text-align: center;
+	color: white;
+	padding: 9px 0;
+	width: 100vw;
+	transition: 0.8s all;
+	/* opacity: 0; */
+	transform: translateY(40px);
+}
+
 /* Main */
 
 .main {
@@ -187,6 +198,10 @@ input:focus {
 	margin: 10px auto;
 	border-radius: 25px;
 	overflow-wrap: break-word;
+}
+
+.depo__subtext {
+	color: #c2b97f;
 }
 
 .depo__address span {
@@ -267,9 +282,13 @@ button.copied:hover {
 
 @media only screen and (max-width: 600px) {
 	body {
-		background-size: 100% auto;
-		background-repeat: repeat;
+		background-size: auto 100%;
+		/* background-repeat: repeat; */
 		height: auto;
+	}
+	option::placeholder,
+	input::placeholder {
+		font-size: 0.9rem !important;
 	}
 	.main {
 		flex-direction: column;
@@ -295,10 +314,16 @@ button.copied:hover {
 		font-size: 1.3rem;
 		margin: -20px;
 	}
+	.depo__subtext {
+		font-size: 0.9rem;
+	}
 	.depo__address {
 		width: 60vw;
 		font-size: 0.8rem;
 		padding-top: 10px;
+	}
+	.depo__qr {
+		width: 200px;
 	}
 	.alert-note {
 		width: 65vw;
@@ -312,8 +337,7 @@ button.copied:hover {
 	body {
 		height: auto;
 		background-size: auto 100%;
-		background-repeat: repeat;
-		/* overflow: scroll; */
+		background-repeat: repeat-x;
 	}
 	h4 {
 		font-size: 1.1rem;
@@ -341,6 +365,7 @@ button.copied:hover {
 		width: 60vw;
 		height: 80px;
 		font-size: 0.9rem;
+		padding-top: 20px;
 	}
 }
 
@@ -354,6 +379,7 @@ button.copied:hover {
 	}
 	.alert-note {
 		font-size: 1rem;
+		padding-top: 15px;
 	}
 }
 
@@ -361,7 +387,7 @@ button.copied:hover {
 	body {
 		background-size: 100% auto;
 		height: auto;
-		background-repeat: repeat-y;
+		/* background-repeat: repeat-y; */
 	}
 	.main {
 		flex-direction: row;
@@ -396,6 +422,9 @@ button.copied:hover {
 }
 
 @media only screen and (min-width: 1500px) {
+	.main__child {
+		height: 500px;
+	}
 	.card__inside {
 		transform: scale(1.11);
 		margin-top: 50px;
