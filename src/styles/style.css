@@ -88,6 +88,13 @@ input:focus {
 	border: 1px solid gray;
 }
 
+.notification {
+	position: fixed;
+	top: 20px;
+	right: 50px;
+	left: 50px;
+}
+
 /* header */
 
 #header {
@@ -142,7 +149,7 @@ input:focus {
 }
 
 .main__child {
-	height: 70vh;
+	height: 460px;
 	border-radius: 20px;
 	background-color: var(--primary-grey);
 }
@@ -257,6 +264,49 @@ button.copied:hover {
 }
 
 /* media queries */
+
+@media only screen and (max-width: 600px) {
+	body {
+		background-size: 100% auto;
+		background-repeat: repeat;
+		height: auto;
+	}
+	.main {
+		flex-direction: column;
+		height: auto;
+	}
+	.main__child {
+		margin: 40px auto;
+		width: 88vw;
+	}
+	.modal-card {
+		/* overflow-wrap: break-word; */
+		width: 95vw !important;
+	}
+	.modal-card-title {
+		width: 80vw;
+	}
+	h4 {
+		font-size: 1.2rem;
+	}
+	.stepcount {
+		width: 70px;
+		height: 70px;
+		font-size: 1.3rem;
+		margin: -20px;
+	}
+	.depo__address {
+		width: 60vw;
+		font-size: 0.8rem;
+		padding-top: 10px;
+	}
+	.alert-note {
+		width: 65vw;
+		height: 80px;
+		font-size: 0.8rem;
+		padding-top: 10px;
+	}
+}
 
 @media only screen and (min-width: 600px) {
 	body {
