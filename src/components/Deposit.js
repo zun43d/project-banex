@@ -27,7 +27,7 @@ const Deposit = () => {
 			<p className="stepcount one">১</p>
 			<div className="card__inside">
 				<h4>নিচের অ্যাড্রেস এ বানানো পাঠান</h4>
-				<p className="depo__subtext"> সর্বনিম্ন ১০০০ - সর্বোচ্চ ৩০,০০০</p>
+				<p className="depo__subtext"> সর্বনিম্ন ১৯১৯ - সর্বোচ্চ ৩০,০০০</p>
 				<div className="depo">
 					<div className="depo__address">
 						<span>ban_3hx3yb9</span>

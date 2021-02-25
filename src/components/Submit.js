@@ -31,10 +31,7 @@ const Submit = () => {
 		e.preventDefault();
 		if (banAddr.current.value.length !== 64) {
 			errorInput(banAddr);
-		} else if (
-			amount.current.value < '1000' &&
-			amount.current.value > '30000'
-		) {
+		} else if (amount.current.value < 1919 && amount.current.value > 30000) {
 			errorInput(amount);
 		} else if (phone.current.value.length !== 11) {
 			errorInput(phone);
