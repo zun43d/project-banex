@@ -14,7 +14,7 @@ const Notice = () => {
 		<section>
 			<div id="notice">
 				<p>
-					*বি.দ্রঃ সাইটের রক্ষণাবেক্ষণের জন্য প্রতি লেনদেন এ ৫% করে ফি প্রযোজ্য!
+					BanEx এ আপনাকে স্বাগতম!
 				</p>
 			</div>
 			<div ref={ln} id="legal-notice">
