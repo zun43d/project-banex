@@ -28,17 +28,30 @@ const Submit = () => {
 	};
 
 	const sellBan = (e) => {
+		console.log(e);
 		e.preventDefault();
-		if (banAddr.current.value.length !== 64) {
-			errorInput(banAddr);
-		} else if (amount.current.value < 1919 && amount.current.value > 30000) {
-			errorInput(amount);
-		} else if (phone.current.value.length !== 11) {
-			errorInput(phone);
-		} else if (reffer.current.value == null) {
-			errorInput(reffer);
+		if (e.target.form[0].value.length == 64) {
+			if (
+				+e.target.form[1].value >= '1919' &&
+				+e.target.form[1].value <= '30000' &&
+				typeof +e.target.form[1].value == 'number'
+			) {
+				if (e.target.form[2].value.length === 11) {
+					if (
+						e.target.form[3].value != 'যার মাধ্যমে এসেছেন তার নাম বাছাই করুন'
+					) {
+						modal.current.classList.add('is-active');
+					} else {
+						errorInput(reffer);
+					}
+				} else {
+					errorInput(phone);
+				}
+			} else {
+				errorInput(amount);
+			}
 		} else {
-			modal.current.classList.add('is-active');
+			errorInput(banAddr);
 		}
 	};
 	const showSuccess = () => {
@@ -52,16 +65,6 @@ const Submit = () => {
 	const errorInput = (a) => {
 		a.current.classList.add('error-input');
 	};
-
-	// const resetInput = (e) => {
-	// 	e.current.classList.remove('error-input');
-	// };
-
-	// const formCheck = (e) => {
-	// 	e[0].value !== 64
-	// 		? e[0].classList.add('error-input')
-	// 		: e[0].classList.remove('error-input');
-	// };
 
 	return (
 		<div className="main__child">
@@ -99,12 +102,11 @@ const Submit = () => {
 							<input
 								// onChange={amntX}
 								ref={amount}
-								type="number"
+								type="text"
 								placeholder="কতো বানানো পাঠিয়েছেন তা নিচে লিখুনঃ"
 								id="form__amount"
-								min="4"
-								max="5"
 								autoComplete="off"
+								maxLength="5"
 							/>
 						</div>
 						<div>
@@ -121,6 +123,7 @@ const Submit = () => {
 								<option>যার মাধ্যমে এসেছেন তার নাম বাছাই করুন</option>
 								<option value="Jim">Ibtisam Jimmy</option>
 								<option value="Shaiyan">Shaiyan</option>
+								<option value="Zunaed">Zunaed</option>
 							</select>
 						</div>
 						<button
@@ -176,29 +179,6 @@ const Submit = () => {
 							না
 						</button>
 					</footer>
-				</div>
-			</div>
-			{/* Modal for Completed Transection message */}
-			<div className="modal">
-				<div className="modal-background"></div>
-				<div className="modal-card">
-					{/* <header className="modal-card-head">
-						<p className="modal-card-title">
-							বানানো সেল এর জন্য রিকুয়েস্ট প্রেরন হয়েছে।
-						</p>
-						<button className="delete" aria-label="close"></button>
-					</header> */}
-					{/* <section className="modal-card-body">
-						<h5>
-							আপনার বানানো সেল করার জন্য রিকুয়েস্ট দেওয়া হয়েছে। এখন একটু
-							অপেক্ষার পালা। আগামি ২৪ ঘন্টার মধ্যে আপনি আপনার বিকাশে টাকা পেয়ে
-							যাবেন। ধন্যবাদ!
-						</h5>
-					</section> */}
-					{/* <footer className="modal-card-foot">
-						<button className="button is-success">Save changes</button>
-						<button className="button">Cancel</button>
-					</footer> */}
 				</div>
 			</div>
 		</div>
