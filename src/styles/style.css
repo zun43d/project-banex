@@ -26,7 +26,7 @@ body {
 
 ::-webkit-scrollbar {
 	width: 10px;
-	background: var(--input-color);
+	background: var(--grey);
 	padding: 5px;
 }
 
@@ -36,12 +36,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--grey);
+	background: var(--input-color);
 	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--primary-grey);
+	background: var(--note-color);
 }
 
 /* --------------------------------------------------- */
