@@ -32,7 +32,7 @@ const Submit = () => {
 		e.preventDefault();
 		if (e.target.form[0].value.length == 64) {
 			if (
-				+e.target.form[1].value >= '1919' &&
+				+e.target.form[1].value >= '999' &&
 				+e.target.form[1].value <= '30000' &&
 				typeof +e.target.form[1].value == 'number'
 			) {
